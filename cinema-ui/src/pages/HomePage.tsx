@@ -15,7 +15,7 @@ export default function HomePage() {
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
-          Flujo: Lista (público) → Login → Admin (Panel) → CRUD Shows / Resevations.
+          Flujo: Lista (público) → Login → Admin (Panel) → CRUD Marcas / Vehículos.
         </Typography>
       </Paper>
     </Container>

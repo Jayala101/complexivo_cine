@@ -1,5 +1,5 @@
 import { http } from "./http";
-
+    
 export type Paginated<T> = {
   count: number;
   next: string | null;
@@ -8,12 +8,13 @@ export type Paginated<T> = {
 };
 
 export type Shows = {
-  id: number;
-  movie_tile: string;
-  room: string;
-  price: number;
-  available_seats: number;
-};
+    id: number;
+    movie_title: string;
+    room: string;
+    price: number;
+    available_seats: number;
+  
+  };
 
 
 export async function listShowsApi() {
@@ -21,13 +22,13 @@ export async function listShowsApi() {
   return data; // { count, next, previous, results }
 }
 
-export async function createShowApi(nombre: string) {
-  const { data } = await http.post<Shows>("/api/shows/", { nombre });
+export async function createShowApi(payload: Omit<Shows, "id">) {
+  const { data } = await http.post<Shows>("/api/shows/", payload);
   return data;
 }
 
-export async function updateShowApi(id: number, nombre: string) {
-  const { data } = await http.put<Shows>(`/api/shows/${id}/`, { nombre });
+export async function updateShowApi(id: number, payload: Partial<Omit<Shows, "id">>) {
+  const { data } = await http.patch<Shows>(`/api/shows/${id}/`, payload);
   return data;
 }
 

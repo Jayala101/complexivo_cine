@@ -7,34 +7,35 @@ export type Paginated<T> = {
   results: T[];
 };
 
-export type Reservations = {
+export type Reservation = {
   id: number;
-  show: number;
-  seats:number;
+  show_id: number;
+  customer_name: string;
+  seats: number;
   status: string;
   created_at: string;
 };
 
-export async function listReservationsPublicApi() {
-  const { data } = await http.get<Paginated<Reservations>>("/api/reservations/");
+export async function listreservationsPublicApi() {
+  const { data } = await http.get<Paginated<Reservation>>("/api/reservations/");
   return data; // { ... , results: [] }
 }
 
-export async function listReservationsAdminApi() {
-  const { data } = await http.get<Paginated<Reservations>>("/api/reservations/");
+export async function listreservationsAdminApi() {
+  const { data } = await http.get<Paginated<Reservation>>("/api/reservations/");
   return data;
 }
 
-export async function createReservationApi(payload: Omit<Reservations, "id">) {
-  const { data } = await http.post<Reservations>("/api/reservations/", payload);
+export async function createReservationApi(payload: Omit<Reservation, "id">) {
+  const { data } = await http.post<Reservation>("/api/reservations/", payload);
   return data;
 }
 
-export async function updateReservationApi(id: number, payload: Partial<Reservations>) {
-  const { data } = await http.put<Reservations>(`/api/reservations/${id}/`, payload);
+export async function updateReservationApi(id: number, payload: Partial<Reservation>) {
+  const { data } = await http.put<Reservation>(`/api/reservations/${id}/`, payload);
   return data;
 }
 
 export async function deleteReservationApi(id: number) {
-  await http.delete(`/api/Reservations/${id}/`);
+  await http.delete(`/api/reservations/${id}/`);
 }

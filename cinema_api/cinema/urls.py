@@ -11,8 +11,8 @@ router.register(r"reservations", ReservationsViewSet, basename="reservations")
 urlpatterns = [
     # Mongo
     path("movie-catalog/", movie_catalog_list_create),
-    path("service-types/<str:id>/", movie_catalog_detail),
+    path("movie-catalog/<str:id>/", movie_catalog_detail),
     path("reservation-events/", reservation_events_list_create),
-    path("vehicle-services/<str:id>/", reservation_events_detail),
+    path("reservation-events/<str:id>/", reservation_events_detail),
 ]
 urlpatterns += router.urls

@@ -11,17 +11,18 @@ class ShowsViewSet(viewsets.ModelViewSet):
     serializer_class = ShowsSerializer
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    search_fields = ["id", "room", "price", "available_seats"]
-    ordering_fields = ["id", "room", "price", "available_seats"]
+    search_fields = ["movie_title"]
+    ordering_fields = ["id", "movie_title", "room", "price", "available_seats"]
+
 
 class ReservationsViewSet(viewsets.ModelViewSet):
-    queryset = Reservations.objects.select_related("show").all().order_by("-id")
+    queryset = Reservations.objects.select_related("show_id").all().order_by("-id")
     serializer_class = ReservationsSerializer
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = ["show"]
-    search_fields = ["id", "show", "customer_name", "seats", "status", "created_at"]
-    ordering_fields = ["id", "show", "customer_name", "seats", "status", "created_at"]
+    filterset_fields = ["show_id"]
+    search_fields = ["id", "customer_name", "seats", "status", "created_at"]
+    ordering_fields = ["id", "customer_name", "seats", "status", "created_at"]
 
     def get_queryset(self):
         qs = super().get_queryset()
