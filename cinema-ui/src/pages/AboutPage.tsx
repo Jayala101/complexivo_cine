@@ -14,7 +14,7 @@ export default function AboutPage() {
           <ListItem><ListItemText primary="GET /api/reservations/ (público, paginado)" /></ListItem>
           <ListItem><ListItemText primary="POST /api/auth/login/ (JWT)" /></ListItem>
           <ListItem><ListItemText primary="CRUD /api/shows/ (admin, paginado en LIST)" /></ListItem>
-          <ListItem><ListItemText primary="CRUD /api/shows/ (admin, paginado en LIST)" /></ListItem>
+          <ListItem><ListItemText primary="CRUD /api/reservations/ (admin, paginado en LIST)" /></ListItem>
         </List>
 
         <Typography variant="body2" color="text.secondary">

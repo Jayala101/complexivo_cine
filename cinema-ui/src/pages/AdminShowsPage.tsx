@@ -8,7 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import { type Shows, listShowsApi, createShowApi, updateShowApi, deleteShowApi } from "../api/shows.api";
 
-export default function AdminMarcasPage() {
+export default function AdminShowsPage() {
   const [items, setItems] = useState<Shows[]>([]);
   const [movieTitle, setMovieTitle] = useState("");
   const [room, setRoom] = useState("");

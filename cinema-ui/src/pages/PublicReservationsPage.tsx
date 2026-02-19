@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Paper, Typography, Button, Stack, Table, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
 import { type Reservation, listreservationsPublicApi } from "../api/reservations.api";
 
-export default function PublicVehiclesPage() {
+export default function PublicReservationsPage() {
   const [items, setItems] = useState<Reservation[]>([]);
   const [error, setError] = useState("");
 

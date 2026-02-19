@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Stack } from "@mui/material";
 
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import PublicVehiclesPage from "./pages/PublicReservationsPage";
+import PublicReservationsPage from "./pages/PublicReservationsPage";
 import LoginPage from "./pages/LoginPage";
 
 import AdminHomePage from "./pages/AdminHomePage";
@@ -18,7 +18,7 @@ export default function App() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Vehículos UI (MUI)
+            Cinema UI (MUI)
           </Typography>
 
           <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}>
@@ -34,7 +34,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/acerca" element={<AboutPage />} />
-        <Route path="/lista" element={<PublicVehiclesPage />} />
+        <Route path="/lista" element={<PublicReservationsPage />} />
         <Route path="/login" element={<LoginPage />} />
 
         <Route

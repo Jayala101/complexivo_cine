@@ -7,7 +7,7 @@ from bson.errors import InvalidId
 from .mongo import db
 from .mongo_serializers import ReservationEventsSerializer
 
-col = db["reservation_eventss"]
+col = db["reservation_events"]
 
 def fix_id(doc):
     doc["id"] = str(doc["_id"])

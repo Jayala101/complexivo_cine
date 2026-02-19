@@ -1,12 +1,12 @@
 import { Container, Paper, Typography, Stack } from "@mui/material";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import MovieIcon from "@mui/icons-material/Movie";
 
 export default function HomePage() {
   return (
     <Container sx={{ mt: 3 }}>
       <Paper sx={{ p: 3 }}>
         <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
-          <DirectionsCarIcon />
+          <MovieIcon />
           <Typography variant="h5">Examen Frontend — Cinema UI</Typography>
         </Stack>
 
@@ -15,7 +15,7 @@ export default function HomePage() {
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
-          Flujo: Lista (público) → Login → Admin (Panel) → CRUD Marcas / Vehículos.
+          Flujo: Lista (público) → Login → Admin (Panel) → CRUD Funciones / Reservaciones.
         </Typography>
       </Paper>
     </Container>

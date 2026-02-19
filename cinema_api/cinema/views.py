@@ -16,11 +16,11 @@ class ShowsViewSet(viewsets.ModelViewSet):
 
 
 class ReservationsViewSet(viewsets.ModelViewSet):
-    queryset = Reservations.objects.select_related("show_id").all().order_by("-id")
+    queryset = Reservations.objects.select_related("show").all().order_by("-id")
     serializer_class = ReservationsSerializer
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = ["show_id"]
+    filterset_fields = ["show"]
     search_fields = ["id", "customer_name", "seats", "status", "created_at"]
     ordering_fields = ["id", "customer_name", "seats", "status", "created_at"]
 
@@ -35,7 +35,7 @@ class ReservationsViewSet(viewsets.ModelViewSet):
         return qs
 
     def get_permissions(self):
-        # Público: SOLO listar vehículos
+        # Público: SOLO listar reservaciones
         if self.action == "list":
             return [AllowAny()]
         return super().get_permissions()

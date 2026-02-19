@@ -10,7 +10,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { type Shows, listShowsApi } from "../api/shows.api";
 import { type Reservation, listreservationsAdminApi, createReservationApi, updateReservationApi, deleteReservationApi } from "../api/reservations.api";
 
-export default function AdminVehiculosPage() {
+export default function AdminReservationsPage() {
   const [items, setItems] = useState<Reservation[]>([]);
   const [shows, setShows] = useState<Shows[]>([]);
   const [error, setError] = useState("");
